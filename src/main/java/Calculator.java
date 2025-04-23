@@ -3,10 +3,18 @@ public class Calculator {
         return x + y;
     }
 
-    public int subtract(int a, int b) {
-        if (a - b < 0) {
+    public int subtract(int x, int y) {
+        if (x - y < 0) {
             throw new IllegalStateException("Negative results are not allowed.");
         }
-        return a - b;
+        return x - y;
+    }
+
+    public int multiply(int x, int y) {
+        long result = (long) x * y;
+        if (result > Integer.MAX_VALUE) {
+            throw new UnsupportedOperationException("Multiplication overflow.");
+        }
+        return x * y;
     }
 }
