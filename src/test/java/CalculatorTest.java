@@ -30,3 +30,13 @@ public class CalculatorTest {
     void testMultiplicationOverflow() {
         assertThrows(UnsupportedOperationException.class, () -> calculator.multiply(Integer.MAX_VALUE, 2));
     }
+
+    @Test
+    void testDivision() {
+        assertEquals(2, calculator.divide(6, 3));
+    }
+
+    @Test
+    void testDivisionByZero() {
+        assertThrows(ArithmeticException.class, () -> calculator.divide(5, 0));
+    }
